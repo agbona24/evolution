@@ -32,9 +32,21 @@ function StudyAbroadHero() {
 
       <div className="container-custom relative z-10">
         <div className="max-w-4xl">
+          {/* Breadcrumb */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="flex items-center gap-2 text-sm mb-6"
+          >
+            <a href="/" className="text-[#94a3b8] hover:text-white transition-colors">Home</a>
+            <span className="text-[#64748b]">/</span>
+            <span className="text-[#f97316]">Study Abroad</span>
+          </motion.div>
+          
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
             className="inline-block text-[#f97316] text-sm font-semibold tracking-wider uppercase mb-4"
           >
             Overseas Advisory Services

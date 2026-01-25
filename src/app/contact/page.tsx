@@ -12,40 +12,62 @@ import { ScrollReveal, StaggerContainer, StaggerItem } from '@/lib/animations';
 
 function ContactHero() {
   return (
-    <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 bg-gradient-to-br from-[#f8fafc] via-white to-[#f1f5f9] overflow-hidden">
+    <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 bg-gradient-to-br from-[#0f172a] to-[#1e293b] overflow-hidden">
+      {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
-          animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.4, 0.2] }}
-          transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute top-20 right-20 w-96 h-96 bg-[#c9a227]/10 rounded-full blur-3xl"
+          animate={{ scale: [1, 1.3, 1], opacity: [0.1, 0.2, 0.1] }}
+          transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
+          className="absolute -top-40 -right-40 w-[600px] h-[600px] bg-[#0d9488]/20 rounded-full blur-3xl"
         />
+        <motion.div
+          animate={{ scale: [1.2, 1, 1.2], opacity: [0.1, 0.15, 0.1] }}
+          transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
+          className="absolute -bottom-40 -left-40 w-[500px] h-[500px] bg-[#f97316]/20 rounded-full blur-3xl"
+        />
+        <div className="absolute inset-0 opacity-20" style={{
+          backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px)',
+          backgroundSize: '24px 24px'
+        }} />
       </div>
 
       <div className="container-custom relative z-10">
         <div className="max-w-4xl">
+          {/* Breadcrumb */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="flex items-center gap-2 text-sm mb-6"
+          >
+            <a href="/" className="text-[#94a3b8] hover:text-white transition-colors">Home</a>
+            <span className="text-[#64748b]">/</span>
+            <span className="text-[#0d9488]">Contact Us</span>
+          </motion.div>
+          
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-block text-[#c9a227] text-sm font-semibold tracking-wider uppercase mb-4"
+            transition={{ delay: 0.1 }}
+            className="inline-block text-[#0d9488] text-sm font-semibold tracking-wider uppercase mb-4"
           >
-            Contact Us
+            Get In Touch
           </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0f172a] leading-tight mb-6"
+            transition={{ delay: 0.2 }}
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6"
           >
-            Let&apos;s Start a Conversation
+            Let&apos;s Start Your Journey
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-lg md:text-xl text-[#64748b] max-w-2xl leading-relaxed"
+            transition={{ delay: 0.3 }}
+            className="text-lg md:text-xl text-[#94a3b8] max-w-2xl leading-relaxed"
           >
-            Ready to transform your business? Get in touch with our team 
-            to discuss how we can help you achieve your goals.
+            Ready to transform your career with professional skills and certifications? 
+            Get in touch with our team to discuss how we can help you achieve your goals.
           </motion.p>
         </div>
       </div>
