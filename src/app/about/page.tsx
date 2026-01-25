@@ -238,7 +238,7 @@ const team = [
   { name: 'Salami Babatunde Ayinla', role: 'Evolution Manager', image: '/images/salami.jpeg' },
   { name: 'Hammed Kazeem', role: 'Bursar', image: '/images/bursar.jpeg' },
   { name: 'Dr Chen James', role: 'Tutor, Evolution Vocational Tutors', image: '/images/tutor1.jpeg' },
-  { name: 'Jimoh Ayinde M.', role: 'Admission Officer', image: '/images/admission_officer.jpeg' },
+  { name: 'Jimoh Ayinde M.', role: 'Administrative Officer', image: '/images/admission_officer.jpeg' },
 ];
 
 function TeamSection() {
