@@ -117,10 +117,10 @@ function HeroSection() {
           >
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {[
-                { value: '1000+', label: 'Graduates' },
-                { value: '15+', label: 'Courses' },
+                { value: '100+', label: 'Graduates' },
+                { value: '10+', label: 'Courses' },
                 { value: '98%', label: 'Success Rate' },
-                { value: '4', label: 'Countries' },
+                { value: '4+', label: 'Years Experience' },
               ].map((stat, index) => (
                 <div key={index} className="text-center">
                   <div className="text-2xl md:text-3xl font-bold text-white mb-1">{stat.value}</div>

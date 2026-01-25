@@ -110,7 +110,7 @@ function StorySection() {
                   </svg>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-[#0f172a]">1000+</div>
+                  <div className="text-2xl font-bold text-[#0f172a]">100+</div>
                   <div className="text-sm text-[#64748b]">Graduates</div>
                 </div>
               </div>
@@ -439,10 +439,10 @@ function MilestonesSection() {
 // ============================================
 
 const aboutStats = [
-  { value: 1000, suffix: '+', label: 'Graduates' },
-  { value: 20, suffix: '+', label: 'Expert Tutors' },
+  { value: 100, suffix: '+', label: 'Graduates' },
+  { value: 5, suffix: '+', label: 'Expert Tutors' },
   { value: 10, suffix: '+', label: 'Course Programs' },
-  { value: 7, suffix: '+', label: 'Years Experience' },
+  { value: 4, suffix: '+', label: 'Years Experience' },
 ];
 
 function AboutStatsSection() {
