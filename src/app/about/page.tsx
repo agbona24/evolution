@@ -87,19 +87,14 @@ function StorySection() {
         {/* Image/Visual */}
         <ScrollReveal direction="left">
           <div className="relative">
-            <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-[#1e293b] to-[#0f172a]">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <motion.div
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 60, repeat: Infinity, ease: 'linear' }}
-                  className="w-72 h-72 border border-[#c9a227]/20 rounded-full"
-                />
-                <div className="absolute w-56 h-56 border-2 border-[#c9a227]/30 rounded-full" />
-                <div className="absolute w-40 h-40 border border-[#c9a227]/40 rounded-full" />
-                <span className="absolute text-[#c9a227] text-9xl font-bold opacity-20">E</span>
-              </div>
+            <div className="aspect-[4/3] rounded-2xl overflow-hidden">
+              <img 
+                src="/images/building/office_building.jpeg" 
+                alt="Evolution Vocational Tutors Building"
+                className="w-full h-full object-cover"
+              />
             </div>
-            {/* Timeline Card */}
+            {/* Stats Card */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -108,14 +103,15 @@ function StorySection() {
               className="absolute -left-6 top-1/2 -translate-y-1/2 bg-white p-6 rounded-xl shadow-2xl hidden lg:block"
             >
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-[#c9a227] rounded-full flex items-center justify-center">
+                <div className="w-12 h-12 bg-[#0d9488] rounded-full flex items-center justify-center">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
                   </svg>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-[#0f172a]">300%</div>
-                  <div className="text-sm text-[#64748b]">Average ROI</div>
+                  <div className="text-2xl font-bold text-[#0f172a]">1000+</div>
+                  <div className="text-sm text-[#64748b]">Graduates</div>
                 </div>
               </div>
             </motion.div>
@@ -125,32 +121,34 @@ function StorySection() {
         {/* Content */}
         <div>
           <ScrollReveal>
-            <span className="inline-block text-[#c9a227] text-sm font-semibold tracking-wider uppercase mb-4">
+            <span className="inline-block text-[#0d9488] text-sm font-semibold tracking-wider uppercase mb-4">
               Our Story
             </span>
           </ScrollReveal>
           <ScrollReveal delay={0.1}>
             <h2 className="text-3xl lg:text-4xl font-bold text-[#0f172a] leading-tight mb-6">
-              From Humble Beginnings to Industry Leadership
+              Empowering Futures Through Quality Vocational Training
             </h2>
           </ScrollReveal>
           <ScrollReveal delay={0.2}>
             <p className="text-lg text-[#64748b] leading-relaxed mb-6">
-              Evolution was founded in 2010 with a simple yet powerful vision: to help businesses 
-              navigate the complexities of modern markets through strategic thinking and innovative solutions.
+              Evolution Vocational Tutors was founded with a powerful mission: to Educate, Mentor, 
+              Train, and Empower for Leadership (EMTEL). We believe that practical skills and quality 
+              education are the keys to unlocking limitless opportunities.
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.3}>
             <p className="text-lg text-[#64748b] leading-relaxed mb-6">
-              What started as a small consultancy has grown into a global firm with offices in 
-              New York, London, Singapore, and Sydney. Today, we serve Fortune 500 companies 
-              and ambitious startups alike, delivering measurable results that drive sustainable growth.
+              Based in Lagos, Nigeria, we have grown from a small training center to a comprehensive 
+              vocational institution offering healthcare training, professional certifications, and 
+              study abroad advisory services. Our graduates are now making their mark across Nigeria 
+              and internationally.
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.4}>
             <p className="text-lg text-[#64748b] leading-relaxed">
-              Our success is built on a foundation of deep expertise, unwavering commitment to 
-              client outcomes, and a culture that attracts the brightest minds in the industry.
+              Our success is built on experienced tutors, hands-on practical training, and a 
+              commitment to student success that goes beyond the classroom.
             </p>
           </ScrollReveal>
         </div>
@@ -236,14 +234,10 @@ function ValuesSection() {
 // ============================================
 
 const team = [
-  { name: 'Alexandra Chen', role: 'Chief Executive Officer' },
-  { name: 'Marcus Williams', role: 'Chief Strategy Officer' },
-  { name: 'Sarah Thompson', role: 'Chief Technology Officer' },
-  { name: 'David Rodriguez', role: 'Chief Operations Officer' },
-  { name: 'Emily Parker', role: 'VP of Consulting' },
-  { name: 'James Mitchell', role: 'VP of Engineering' },
-  { name: 'Lisa Anderson', role: 'VP of Client Success' },
-  { name: 'Michael Brown', role: 'VP of Business Development' },
+  { name: 'Chief (Dr). Ogundipe Tony Bosun', role: 'Chief Executive Officer', image: '/images/ceo.jpeg' },
+  { name: 'Hammed Kazeem', role: 'Bursar', image: '/images/bursar.jpeg' },
+  { name: 'Dr Chen James', role: 'Tutor, Evolution Vocational Tutors', image: '/images/tutor1.jpeg' },
+  { name: 'Jimoh Ayinde M.', role: 'Admission Officer', image: '/images/admission_officer.jpeg' },
 ];
 
 function TeamSection() {
@@ -258,7 +252,7 @@ function TeamSection() {
       <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-8">
         {team.map((member, index) => (
           <StaggerItem key={index}>
-            <TeamCard name={member.name} role={member.role} />
+            <TeamCard name={member.name} role={member.role} image={member.image} />
           </StaggerItem>
         ))}
       </StaggerContainer>
@@ -273,16 +267,132 @@ function TeamSection() {
 }
 
 // ============================================
+// Practical Training Gallery Section
+// ============================================
+
+const practicalImages = [
+  { src: '/images/practical/2.jpeg', alt: 'Healthcare Practical Training' },
+  { src: '/images/practical/3.jpeg', alt: 'Hands-on Medical Training' },
+  { src: '/images/practical/4.jpeg', alt: 'Student Practical Session' },
+  { src: '/images/practical/5.jpeg', alt: 'Healthcare Skills Training' },
+  { src: '/images/practical/6.jpeg', alt: 'Medical Equipment Training' },
+  { src: '/images/practical/7.jpeg', alt: 'Clinical Practice Session' },
+  { src: '/images/practical/8.jpeg', alt: 'Healthcare Demonstration' },
+  { src: '/images/practical/9.jpeg', alt: 'Student Healthcare Training' },
+];
+
+function PracticalGallerySection() {
+  return (
+    <Section background="gray" paddingY="xl">
+      <SectionHeader
+        label="Hands-On Learning"
+        title="Healthcare Practical Training"
+        description="Our state-of-the-art facilities provide students with real-world practical experience in healthcare settings."
+      />
+
+      <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {practicalImages.map((image, index) => (
+          <StaggerItem key={index}>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className="relative aspect-square rounded-xl overflow-hidden cursor-pointer"
+            >
+              <img
+                src={image.src}
+                alt={image.alt}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                <span className="text-white text-sm font-medium">{image.alt}</span>
+              </div>
+            </motion.div>
+          </StaggerItem>
+        ))}
+      </StaggerContainer>
+    </Section>
+  );
+}
+
+// ============================================
+// Facilities Section
+// ============================================
+
+function FacilitiesSection() {
+  return (
+    <Section background="white" paddingY="xl">
+      <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <ScrollReveal>
+            <span className="inline-block text-[#0d9488] text-sm font-semibold tracking-wider uppercase mb-4">
+              Our Facilities
+            </span>
+          </ScrollReveal>
+          <ScrollReveal delay={0.1}>
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#0f172a] leading-tight mb-6">
+              Modern Training Environment
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal delay={0.2}>
+            <p className="text-lg text-[#64748b] leading-relaxed mb-6">
+              Our purpose-built training facility in Lagos provides the ideal environment for 
+              learning. With well-equipped classrooms, practical training areas, and modern 
+              amenities, students receive education that prepares them for real-world success.
+            </p>
+          </ScrollReveal>
+          <ScrollReveal delay={0.3}>
+            <ul className="space-y-4">
+              {['Equipped Healthcare Training Labs', 'Modern Lecture Halls', 'Comfortable Study Areas', 'Resource Library'].map((item, index) => (
+                <li key={index} className="flex items-center gap-3">
+                  <div className="w-6 h-6 bg-[#0d9488]/10 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-[#0d9488]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <span className="text-[#64748b]">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </ScrollReveal>
+        </div>
+        
+        <ScrollReveal direction="right">
+          <div className="grid grid-cols-2 gap-4">
+            <div className="space-y-4">
+              <div className="aspect-[4/5] rounded-xl overflow-hidden">
+                <img 
+                  src="/images/building/office_building.jpeg" 
+                  alt="Evolution Building"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+            <div className="space-y-4 pt-8">
+              <div className="aspect-[4/5] rounded-xl overflow-hidden">
+                <img 
+                  src="/images/building/office_building2.jpeg" 
+                  alt="Evolution Facilities"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </ScrollReveal>
+      </div>
+    </Section>
+  );
+}
+
+// ============================================
 // Milestones Section
 // ============================================
 
 const milestones = [
-  { year: '2010', title: 'Founded', description: 'Evolution established in New York City' },
-  { year: '2013', title: 'Expansion', description: 'Opened offices in London and Singapore' },
-  { year: '2016', title: '100 Clients', description: 'Milestone of serving 100+ enterprise clients' },
-  { year: '2019', title: 'Award', description: 'Named Top Consulting Firm by Forbes' },
-  { year: '2022', title: 'Global', description: 'Expanded to 4 continents with 500+ employees' },
-  { year: '2024', title: 'Innovation', description: 'Launched AI-powered analytics platform' },
+  { year: '2018', title: 'Founded', description: 'Evolution Vocational Tutors established in Lagos, Nigeria' },
+  { year: '2019', title: 'First Graduation', description: 'Celebrated our first cohort of healthcare graduates' },
+  { year: '2020', title: 'Expansion', description: 'Added Study Abroad advisory services' },
+  { year: '2022', title: 'Partnerships', description: 'Established international university partnerships' },
+  { year: '2024', title: 'Growth', description: 'Expanded training facilities and course offerings' },
+  { year: '2025', title: 'Excellence', description: 'Recognized for outstanding vocational training' },
 ];
 
 function MilestonesSection() {
@@ -328,10 +438,10 @@ function MilestonesSection() {
 // ============================================
 
 const aboutStats = [
-  { value: 4, label: 'Global Offices' },
-  { value: 500, suffix: '+', label: 'Team Members' },
-  { value: 50, suffix: '+', label: 'Industries Served' },
-  { value: 15, suffix: '+', label: 'Years Experience' },
+  { value: 1000, suffix: '+', label: 'Graduates' },
+  { value: 20, suffix: '+', label: 'Expert Tutors' },
+  { value: 10, suffix: '+', label: 'Course Programs' },
+  { value: 7, suffix: '+', label: 'Years Experience' },
 ];
 
 function AboutStatsSection() {
@@ -361,12 +471,12 @@ function AboutCTA() {
       <div className="bg-gradient-to-br from-[#0f172a] to-[#1e293b] rounded-3xl p-12 lg:p-16 text-center">
         <ScrollReveal>
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-            Ready to Work With Us?
+            Ready to Start Your Journey?
           </h2>
         </ScrollReveal>
         <ScrollReveal delay={0.1}>
           <p className="text-lg text-[#94a3b8] max-w-2xl mx-auto mb-8">
-            Let&apos;s discuss how Evolution can help transform your business and achieve your strategic goals.
+            Take the first step towards a rewarding career. Contact us today to learn about our programs and enrollment options.
           </p>
         </ScrollReveal>
         <ScrollReveal delay={0.2}>
@@ -389,6 +499,8 @@ export default function AboutPage() {
       <AboutHero />
       <StorySection />
       <AboutStatsSection />
+      <FacilitiesSection />
+      <PracticalGallerySection />
       <ValuesSection />
       <TeamSection />
       <MilestonesSection />
