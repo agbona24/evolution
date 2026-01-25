@@ -333,7 +333,7 @@ const healthcareCourses = [
   },
   {
     title: 'Practical Nursing',
-    description: 'Auxiliary Nursing programme that equips students with education, skills and competency to assist qualified nursing practitioners.',
+    description: 'Practical Nursing programme that equips students with education, skills and competency to assist qualified nursing practitioners.',
     duration: '6-12 months',
     badge: 'Professional',
   },

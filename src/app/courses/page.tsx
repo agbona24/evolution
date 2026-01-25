@@ -105,9 +105,9 @@ const healthcareCourses = [
     color: 'from-[#0d9488] to-[#0f766e]',
   },
   {
-    title: 'Practical Nursing (Auxiliary Nursing)',
+    title: 'Practical Nursing',
     duration: '6-12 months',
-    description: 'Practical Nursing is an Auxiliary Nursing programme designed to equip students with education, skills and competency to assist qualified nursing practitioners in the day-to-day care of patients in hospitals and other clinical settings.',
+    description: 'Practical Nursing programme designed to equip students with education, skills and competency to assist qualified nursing practitioners in the day-to-day care of patients in hospitals and other clinical settings.',
     topics: [
       'Foundation of Nursing',
       'Pharmacology Basics',
