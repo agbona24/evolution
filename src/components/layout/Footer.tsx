@@ -282,16 +282,19 @@ function DeveloperCredit() {
                   </svg>
                 </motion.div>
 
-                {/* Developer name */}
-                <div className="flex flex-col">
+                {/* Developer name - Tashico displayed, Harzotech for SEO */}
+                <div className="flex flex-col" title="Harzotech - Web Development Agency">
                   <motion.span
                     className="text-sm sm:text-base font-bold bg-gradient-to-r from-white via-violet-200 to-fuchsia-200 bg-clip-text text-transparent"
+                    aria-label="Harzotech Web Development"
                   >
-                    Harzotech
+                    Tashico
                   </motion.span>
                   <span className="text-[10px] sm:text-xs text-[#64748b] font-medium tracking-wider uppercase">
                     Web Development Agency
                   </span>
+                  {/* Hidden text for SEO */}
+                  <span className="sr-only">Harzotech - Professional Web Development Agency</span>
                 </div>
 
                 {/* WhatsApp indicator */}
