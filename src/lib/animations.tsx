@@ -62,19 +62,19 @@ export const staggerItem = {
 // ============================================
 
 export const springTransition = {
-  type: 'spring',
+  type: 'spring' as const,
   stiffness: 100,
   damping: 15,
 };
 
 export const smoothTransition = {
   duration: 0.6,
-  ease: [0.22, 1, 0.36, 1], // Custom easing for premium feel
+  ease: [0.22, 1, 0.36, 1] as [number, number, number, number], // Custom easing for premium feel
 };
 
 export const quickTransition = {
   duration: 0.3,
-  ease: [0.22, 1, 0.36, 1],
+  ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
 };
 
 // ============================================
@@ -112,7 +112,7 @@ export function ScrollReveal({
       whileInView="animate"
       viewport={{ once, margin: '-50px' }}
       variants={variants[direction]}
-      transition={{ ...smoothTransition, duration, delay }}
+      transition={{ duration, delay, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
       className={className}
     >
       {children}
