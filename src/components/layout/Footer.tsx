@@ -287,10 +287,10 @@ function DeveloperCredit() {
                   <motion.span
                     className="text-sm sm:text-base font-bold bg-gradient-to-r from-white via-violet-200 to-fuchsia-200 bg-clip-text text-transparent"
                   >
-                    Agbonlahor Emmanuel
+                    Harzotech
                   </motion.span>
                   <span className="text-[10px] sm:text-xs text-[#64748b] font-medium tracking-wider uppercase">
-                    Full Stack Developer
+                    Web Development Agency
                   </span>
                 </div>
 
