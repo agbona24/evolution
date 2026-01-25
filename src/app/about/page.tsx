@@ -235,6 +235,7 @@ function ValuesSection() {
 
 const team = [
   { name: 'Chief (Dr). Ogundipe Tony Bosun', role: 'Chief Executive Officer', image: '/images/ceo.jpeg' },
+  { name: 'Salami Babatunde Ayinla', role: 'Evolution Manager', image: '/images/salami.jpeg' },
   { name: 'Hammed Kazeem', role: 'Bursar', image: '/images/bursar.jpeg' },
   { name: 'Dr Chen James', role: 'Tutor, Evolution Vocational Tutors', image: '/images/tutor1.jpeg' },
   { name: 'Jimoh Ayinde M.', role: 'Admission Officer', image: '/images/admission_officer.jpeg' },

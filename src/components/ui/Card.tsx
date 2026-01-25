@@ -126,7 +126,7 @@ export function TeamCard({ name, role, image, className = '' }: TeamCardProps) {
       transition={{ duration: 0.3 }}
       className={`group text-center ${className}`}
     >
-      <div className="relative w-48 h-48 mx-auto mb-6 overflow-hidden rounded-2xl bg-[#f1f5f9]">
+      <div className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 mx-auto mb-4 md:mb-6 overflow-hidden rounded-xl md:rounded-2xl bg-[#f1f5f9]">
         {image ? (
           <img
             src={image}
@@ -135,15 +135,15 @@ export function TeamCard({ name, role, image, className = '' }: TeamCardProps) {
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#e2e8f0] to-[#cbd5e1]">
-            <span className="text-4xl font-bold text-[#94a3b8]">
+            <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#94a3b8]">
               {name.split(' ').map(n => n[0]).join('')}
             </span>
           </div>
         )}
         <div className="absolute inset-0 bg-[#0f172a]/0 group-hover:bg-[#0f172a]/10 transition-colors duration-300" />
       </div>
-      <h4 className="text-lg font-semibold text-[#0f172a] mb-1">{name}</h4>
-      <p className="text-[#64748b]">{role}</p>
+      <h4 className="text-sm sm:text-base md:text-lg font-semibold text-[#0f172a] mb-1 px-2">{name}</h4>
+      <p className="text-xs sm:text-sm text-[#64748b] px-2">{role}</p>
     </motion.div>
   );
 }
