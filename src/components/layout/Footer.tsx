@@ -65,15 +65,11 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <Link href="/" className="inline-block mb-6">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-gradient-to-br from-[#0d9488] to-[#0f766e] rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-xl">E</span>
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-lg font-bold tracking-tight leading-none">Evolution</span>
-                  <span className="text-[10px] text-[#0d9488] font-medium tracking-wide">VOCATIONAL TUTORS</span>
-                </div>
-              </div>
+              <img 
+                src="/images/logo.png" 
+                alt="Evolution Vocational Tutors" 
+                className="h-12 w-auto brightness-0 invert"
+              />
             </Link>
             <p className="text-[#94a3b8] max-w-sm mb-6 leading-relaxed">
               Educate, Mentor, Train, and Empower for Leadership. Equipping individuals 

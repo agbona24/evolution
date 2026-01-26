@@ -50,19 +50,13 @@ export default function Header() {
           <motion.div
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="flex items-center gap-3"
+            className="flex items-center"
           >
-            <div className="w-10 h-10 bg-gradient-to-br from-[#0d9488] to-[#0f766e] rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">E</span>
-            </div>
-            <div className="flex flex-col">
-              <span className={`text-lg font-bold tracking-tight leading-none transition-colors ${
-                isScrolled || isMobileMenuOpen ? 'text-[#0f172a]' : 'text-[#0f172a]'
-              }`}>
-                Evolution
-              </span>
-              <span className="text-[10px] text-[#0d9488] font-medium tracking-wide">VOCATIONAL TUTORS</span>
-            </div>
+            <img 
+              src="/images/logo.png" 
+              alt="Evolution Vocational Tutors" 
+              className="h-12 sm:h-14 w-auto"
+            />
           </motion.div>
         </Link>
 
@@ -166,14 +160,12 @@ export default function Header() {
             >
               {/* Close button area */}
               <div className="flex items-center justify-between p-6 border-b border-gray-100">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-[#0d9488] to-[#0f766e] rounded-lg flex items-center justify-center">
-                    <span className="text-white font-bold text-xl">E</span>
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="text-lg font-bold tracking-tight leading-none text-[#0f172a]">Evolution</span>
-                    <span className="text-[10px] text-[#0d9488] font-medium tracking-wide">VOCATIONAL TUTORS</span>
-                  </div>
+                <div className="flex items-center">
+                  <img 
+                    src="/images/logo.png" 
+                    alt="Evolution Vocational Tutors" 
+                    className="h-10 w-auto"
+                  />
                 </div>
                 <button
                   onClick={() => setIsMobileMenuOpen(false)}
