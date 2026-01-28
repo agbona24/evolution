@@ -80,8 +80,9 @@ export function SectionHeader({
   return (
     <ScrollReveal className={`max-w-3xl ${alignStyles[align]} mb-12 lg:mb-16 ${className}`}>
       {label && (
-        <span className="inline-block text-[#c9a227] text-sm font-semibold tracking-wider uppercase mb-4">
-          {label}
+        <span className="inline-block text-[#c9a227] text-sm font-semibold tracking-wider uppercase mb-4 relative">
+          <span className="relative z-10">{label}</span>
+          <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-[#c9a227]/20 rounded-full" />
         </span>
       )}
       <h2 className={`text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight mb-4 ${

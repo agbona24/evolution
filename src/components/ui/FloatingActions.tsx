@@ -76,15 +76,16 @@ export default function FloatingActions() {
             initial={{ opacity: 0, x: -20, scale: 0.8 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
             exit={{ opacity: 0, x: -20, scale: 0.8 }}
-            whileHover={{ scale: 1.1 }}
+            whileHover={{ scale: 1.1, y: -2 }}
             whileTap={{ scale: 0.95 }}
+            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             onClick={scrollToTop}
-            className="fixed left-4 md:left-6 bottom-6 z-50 w-12 h-12 md:w-14 md:h-14 bg-[#0f172a] text-white rounded-full shadow-xl shadow-[#0f172a]/30 flex items-center justify-center group transition-colors hover:bg-[#1e293b]"
+            className="fixed left-4 md:left-6 bottom-6 z-50 w-12 h-12 md:w-14 md:h-14 bg-[#0f172a] text-white rounded-full shadow-xl shadow-[#0f172a]/30 flex items-center justify-center group transition-all hover:bg-[#1e293b] hover:shadow-2xl"
             aria-label="Back to top"
           >
             <motion.svg
               animate={{ y: [0, -3, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
+              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
               className="w-5 h-5 md:w-6 md:h-6"
               fill="none"
               stroke="currentColor"
@@ -111,8 +112,8 @@ export default function FloatingActions() {
                   initial={{ opacity: 0, y: 20, scale: 0.8 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 20, scale: 0.8 }}
-                  transition={{ delay: (contactActions.length - 1 - index) * 0.1 }}
-                  whileHover={{ scale: 1.1 }}
+                  transition={{ delay: (contactActions.length - 1 - index) * 0.08, duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                  whileHover={{ scale: 1.1, x: -5 }}
                   whileTap={{ scale: 0.95 }}
                   className={`flex items-center gap-3 group`}
                   aria-label={action.label}
@@ -121,14 +122,14 @@ export default function FloatingActions() {
                   <motion.span
                     initial={{ opacity: 0, x: 10 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: (contactActions.length - 1 - index) * 0.1 + 0.1 }}
-                    className="hidden md:block px-3 py-1.5 bg-[#0f172a] text-white text-sm font-medium rounded-lg shadow-lg"
+                    transition={{ delay: (contactActions.length - 1 - index) * 0.08 + 0.1 }}
+                    className="hidden md:block px-3 py-1.5 bg-[#0f172a] text-white text-sm font-medium rounded-lg shadow-lg backdrop-blur-sm"
                   >
                     {action.label}
                   </motion.span>
                   
                   {/* Icon button */}
-                  <div className={`w-12 h-12 md:w-14 md:h-14 ${action.color} ${action.hoverColor} text-white rounded-full shadow-xl ${action.shadowColor} flex items-center justify-center transition-colors`}>
+                  <div className={`w-12 h-12 md:w-14 md:h-14 ${action.color} ${action.hoverColor} text-white rounded-full shadow-xl ${action.shadowColor} flex items-center justify-center transition-all duration-300 group-hover:shadow-2xl`}>
                     {action.icon}
                   </div>
                 </motion.a>

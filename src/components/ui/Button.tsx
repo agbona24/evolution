@@ -72,19 +72,41 @@ export default function Button({
     </>
   );
 
-  // Motion animation settings
+  // Motion animation settings with enhanced micro-interactions
   const motionProps = {
-    whileHover: disabled ? {} : { scale: 1.02, y: -2 },
-    whileTap: disabled ? {} : { scale: 0.98 },
-    transition: { duration: 0.2 },
+    whileHover: disabled ? {} : { 
+      scale: 1.03, 
+      y: -3,
+      transition: { duration: 0.2, ease: [0.22, 1, 0.36, 1] }
+    },
+    whileTap: disabled ? {} : { 
+      scale: 0.97,
+      transition: { duration: 0.1 }
+    },
+    transition: { duration: 0.3, ease: [0.22, 1, 0.36, 1] },
   };
 
   // Render as link if href is provided
   if (href) {
     return (
       <Link href={href}>
-        <motion.span {...motionProps} className={baseStyles}>
-          {content}
+        <motion.span {...motionProps} className={`${baseStyles} group`}>
+          {icon && iconPosition === 'left' && (
+            <motion.span 
+              className="flex-shrink-0"
+              whileHover={{ x: -3 }}
+            >
+              {icon}
+            </motion.span>
+          )}
+          <span>{children}</span>
+          {icon && iconPosition === 'right' && (
+            <motion.span 
+              className="flex-shrink-0 transition-transform group-hover:translate-x-1"
+            >
+              {icon}
+            </motion.span>
+          )}
         </motion.span>
       </Link>
     );
@@ -97,9 +119,24 @@ export default function Button({
       type={type}
       onClick={onClick}
       disabled={disabled}
-      className={baseStyles}
+      className={`${baseStyles} group`}
     >
-      {content}
+      {icon && iconPosition === 'left' && (
+        <motion.span 
+          className="flex-shrink-0"
+          whileHover={{ x: -3 }}
+        >
+          {icon}
+        </motion.span>
+      )}
+      <span>{children}</span>
+      {icon && iconPosition === 'right' && (
+        <motion.span 
+          className="flex-shrink-0 transition-transform group-hover:translate-x-1"
+        >
+          {icon}
+        </motion.span>
+      )}
     </motion.button>
   );
 }

@@ -44,14 +44,14 @@ export default function Card({
 
   return (
     <motion.div
-      whileHover={hover ? { y: -5, scale: 1.01 } : {}}
-      transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+      whileHover={hover ? { y: -8, scale: 1.02 } : {}}
+      transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
       className={`
         bg-white border border-[#e2e8f0]
         ${paddingStyles[padding]}
         ${shadowStyles[shadow]}
         ${roundedStyles[rounded]}
-        ${hover ? 'hover:shadow-xl hover:border-[#c9a227]/20 transition-shadow' : ''}
+        ${hover ? 'card-lift hover:shadow-2xl hover:border-[#c9a227]/30 transition-all duration-300' : ''}
         ${className}
       `}
     >
@@ -71,22 +71,27 @@ interface ServiceCardProps {
 export function ServiceCard({ icon, title, description, className = '' }: ServiceCardProps) {
   return (
     <motion.div
-      whileHover={{ y: -8 }}
-      transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+      whileHover={{ y: -10 }}
+      transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
       className={`
         group bg-white p-8 rounded-2xl border border-[#e2e8f0]
-        shadow-md hover:shadow-2xl hover:border-[#c9a227]/30
-        transition-all duration-300
+        shadow-md hover:shadow-2xl hover:border-[#c9a227]/40
+        transition-all duration-300 relative overflow-hidden
         ${className}
       `}
     >
-      <div className="w-14 h-14 bg-[#f8fafc] rounded-xl flex items-center justify-center
-                      text-[#c9a227] mb-6 group-hover:bg-[#c9a227] group-hover:text-white
-                      transition-all duration-300">
-        {icon}
+      {/* Subtle gradient background on hover */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#c9a227]/0 to-[#c9a227]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      
+      <div className="relative z-10">
+        <div className="w-14 h-14 bg-[#f8fafc] rounded-xl flex items-center justify-center
+                        text-[#c9a227] mb-6 group-hover:bg-[#c9a227] group-hover:text-white
+                        group-hover:scale-110 transition-all duration-300 shadow-sm group-hover:shadow-lg">
+          {icon}
+        </div>
+        <h3 className="text-xl font-semibold text-[#0f172a] mb-3 group-hover:text-[#c9a227] transition-colors duration-300">{title}</h3>
+        <p className="text-[#64748b] leading-relaxed">{description}</p>
       </div>
-      <h3 className="text-xl font-semibold text-[#0f172a] mb-3">{title}</h3>
-      <p className="text-[#64748b] leading-relaxed">{description}</p>
     </motion.div>
   );
 }
@@ -122,16 +127,16 @@ interface TeamCardProps {
 export function TeamCard({ name, role, image, className = '' }: TeamCardProps) {
   return (
     <motion.div
-      whileHover={{ y: -5 }}
-      transition={{ duration: 0.3 }}
+      whileHover={{ y: -8 }}
+      transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
       className={`group text-center ${className}`}
     >
-      <div className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 mx-auto mb-4 md:mb-6 overflow-hidden rounded-xl md:rounded-2xl bg-[#f1f5f9]">
+      <div className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 mx-auto mb-4 md:mb-6 overflow-hidden rounded-xl md:rounded-2xl bg-[#f1f5f9] shadow-md group-hover:shadow-xl transition-shadow duration-300">
         {image ? (
           <img
             src={image}
             alt={name}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#e2e8f0] to-[#cbd5e1]">
@@ -140,9 +145,9 @@ export function TeamCard({ name, role, image, className = '' }: TeamCardProps) {
             </span>
           </div>
         )}
-        <div className="absolute inset-0 bg-[#0f172a]/0 group-hover:bg-[#0f172a]/10 transition-colors duration-300" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a]/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       </div>
-      <h4 className="text-sm sm:text-base md:text-lg font-semibold text-[#0f172a] mb-1 px-2">{name}</h4>
+      <h4 className="text-sm sm:text-base md:text-lg font-semibold text-[#0f172a] mb-1 px-2 group-hover:text-[#c9a227] transition-colors duration-300">{name}</h4>
       <p className="text-xs sm:text-sm text-[#64748b] px-2">{role}</p>
     </motion.div>
   );
