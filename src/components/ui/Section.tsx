@@ -2,6 +2,7 @@
 
 import { ReactNode } from 'react';
 import { ScrollReveal } from '@/lib/animations';
+import VectorOverlay from './VectorOverlay';
 
 interface SectionProps {
   children: ReactNode;
@@ -21,10 +22,10 @@ export default function Section({
   animate = true,
 }: SectionProps) {
   const backgroundStyles = {
-    white: 'bg-white',
-    gray: 'bg-[#f8fafc]',
-    dark: 'bg-[#0f172a] text-white',
-    gradient: 'bg-gradient-to-b from-[#f8fafc] to-white',
+    white:    'bg-gradient-to-br from-white via-[#f0fdfa] to-white',
+    gray:     'bg-gradient-to-br from-[#f8fafc] via-[#f0fdfa] to-[#f8fafc]',
+    dark:     'bg-gradient-to-br from-[#0f172a] via-[#0d2337] to-[#0f172a] text-white',
+    gradient: 'bg-gradient-to-br from-[#f0fdfa] via-white to-[#fff7ed]',
   };
 
   const paddingStyles = {
@@ -34,16 +35,20 @@ export default function Section({
     xl: 'py-24 lg:py-32',
   };
 
+  const overlayVariant = background === 'dark' ? 'dark' : 'light';
+
   const content = (
     <section
       id={id}
       className={`
+        relative overflow-hidden
         ${backgroundStyles[background]}
         ${paddingStyles[paddingY]}
         ${className}
       `}
     >
-      <div className="container-custom">
+      <VectorOverlay variant={overlayVariant} />
+      <div className="container-custom relative z-10">
         {children}
       </div>
     </section>

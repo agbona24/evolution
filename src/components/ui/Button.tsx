@@ -77,13 +77,13 @@ export default function Button({
     whileHover: disabled ? {} : { 
       scale: 1.03, 
       y: -3,
-      transition: { duration: 0.2, ease: [0.22, 1, 0.36, 1] }
+      transition: { duration: 0.2 }
     },
     whileTap: disabled ? {} : { 
       scale: 0.97,
       transition: { duration: 0.1 }
     },
-    transition: { duration: 0.3, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.3 },
   };
 
   // Render as link if href is provided

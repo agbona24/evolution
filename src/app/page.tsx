@@ -12,7 +12,15 @@ import { ScrollReveal, StaggerContainer, StaggerItem, Counter, Magnetic } from '
 
 function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a]">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/images/practical/2.jpeg')" }}
+      />
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a]/90 via-[#1e293b]/85 to-[#0f172a]/90" />
+
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Gradient Orbs */}
@@ -37,6 +45,110 @@ function HeroSection() {
           backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px)',
           backgroundSize: '24px 24px'
         }} />
+
+        {/* ── Hero Vector Animations ───────────────────────────────── */}
+
+        {/* Animated arc paths */}
+        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1440 900" fill="none" preserveAspectRatio="xMidYMid slice">
+          <motion.path
+            d="M-80,600 C200,350 500,700 800,420 C1050,200 1250,550 1540,320"
+            stroke="rgba(13,148,136,0.18)"
+            strokeWidth="1.5"
+            fill="none"
+            initial={{ pathLength: 0, opacity: 0 }}
+            animate={{ pathLength: 1, opacity: 1 }}
+            transition={{ duration: 3.5, ease: 'easeInOut', delay: 0.5 }}
+          />
+          <motion.path
+            d="M-80,700 C300,480 600,780 900,500 C1100,320 1300,620 1540,430"
+            stroke="rgba(249,115,22,0.12)"
+            strokeWidth="1"
+            fill="none"
+            initial={{ pathLength: 0, opacity: 0 }}
+            animate={{ pathLength: 1, opacity: 1 }}
+            transition={{ duration: 4, ease: 'easeInOut', delay: 1 }}
+          />
+        </svg>
+
+        {/* Rotating hexagons */}
+        <motion.svg
+          className="absolute top-[8%] left-[4%] w-28 h-28 opacity-20"
+          viewBox="0 0 120 120"
+          fill="none"
+          animate={{ rotate: 360 }}
+          transition={{ duration: 40, repeat: Infinity, ease: 'linear' }}
+        >
+          <polygon points="60,8 104,32 104,88 60,112 16,88 16,32" stroke="rgba(13,148,136,0.7)" strokeWidth="1.2" fill="none" />
+          <polygon points="60,22 92,40 92,80 60,98 28,80 28,40" stroke="rgba(13,148,136,0.4)" strokeWidth="0.8" fill="none" />
+        </motion.svg>
+
+        <motion.svg
+          className="absolute bottom-[12%] right-[6%] w-20 h-20 opacity-20"
+          viewBox="0 0 120 120"
+          fill="none"
+          animate={{ rotate: -360 }}
+          transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
+        >
+          <polygon points="60,8 104,32 104,88 60,112 16,88 16,32" stroke="rgba(249,115,22,0.7)" strokeWidth="1.2" fill="none" />
+        </motion.svg>
+
+        {/* Floating triangles */}
+        <motion.svg
+          className="absolute top-[25%] left-[12%] w-6 h-6 opacity-30"
+          viewBox="0 0 24 24"
+          fill="none"
+          animate={{ y: [0, -14, 0], rotate: [0, 20, 0] }}
+          transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
+        >
+          <polygon points="12,2 22,20 2,20" stroke="white" strokeWidth="1.5" fill="none" />
+        </motion.svg>
+        <motion.svg
+          className="absolute bottom-[28%] right-[14%] w-4 h-4 opacity-25"
+          viewBox="0 0 24 24"
+          fill="none"
+          animate={{ y: [0, 12, 0], rotate: [0, -15, 0] }}
+          transition={{ duration: 11, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
+        >
+          <polygon points="12,2 22,20 2,20" stroke="rgba(249,115,22,0.9)" strokeWidth="1.5" fill="none" />
+        </motion.svg>
+
+        {/* Floating rings — center sides */}
+        <motion.div
+          className="absolute top-1/2 -left-16 w-40 h-40 rounded-full -translate-y-1/2"
+          style={{ border: '1px solid rgba(13,148,136,0.15)' }}
+          animate={{ scale: [1, 1.08, 1], opacity: [0.5, 1, 0.5] }}
+          transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+        />
+        <motion.div
+          className="absolute top-1/2 -right-16 w-52 h-52 rounded-full -translate-y-1/2"
+          style={{ border: '1px solid rgba(255,255,255,0.08)' }}
+          animate={{ scale: [1.08, 1, 1.08], opacity: [0.5, 1, 0.5] }}
+          transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
+        />
+
+        {/* Corner bracket — top-left */}
+        <motion.svg
+          className="absolute top-24 left-8 w-10 h-10 opacity-40"
+          viewBox="0 0 40 40"
+          fill="none"
+          initial={{ pathLength: 0, opacity: 0 }}
+          animate={{ pathLength: 1, opacity: 0.4 }}
+          transition={{ duration: 1.2, delay: 1.8 }}
+        >
+          <path d="M2,22 L2,2 L22,2" stroke="#0d9488" strokeWidth="2" strokeLinecap="round" fill="none" />
+        </motion.svg>
+
+        {/* Corner bracket — bottom-right */}
+        <motion.svg
+          className="absolute bottom-16 right-8 w-10 h-10 opacity-40"
+          viewBox="0 0 40 40"
+          fill="none"
+          initial={{ pathLength: 0, opacity: 0 }}
+          animate={{ pathLength: 1, opacity: 0.4 }}
+          transition={{ duration: 1.2, delay: 2.2 }}
+        >
+          <path d="M38,18 L38,38 L18,38" stroke="#f97316" strokeWidth="2" strokeLinecap="round" fill="none" />
+        </motion.svg>
       </div>
 
       <div className="container-custom relative z-10 pt-32 pb-20">
@@ -132,12 +244,49 @@ function HeroSection() {
         </div>
       </div>
 
+      {/* Marquee Strip */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1.2 }}
+        className="absolute bottom-20 left-0 right-0 z-10 overflow-hidden border-y border-white/10 bg-white/5 backdrop-blur-sm py-3"
+      >
+        <div className="animate-marquee">
+          {(() => {
+            const items = [
+              'Certified Nursing Assistant',
+              'Practical Nursing',
+              'Healthcare Support Worker',
+              'Laboratory Assistant',
+              'Fashion Design',
+              'Cosmetics Technology',
+              'Basic Computer Training',
+              'Food Processing',
+              'IELTS Preparation',
+              'WAEC / NECO Prep',
+              'Study in the UK',
+              'Study in Canada',
+            ];
+            // Render full list twice for seamless infinite loop
+            return [...items, ...items].map((item, i) => (
+              <span
+                key={i}
+                className="flex items-center gap-3 px-5 text-sm font-medium text-white/70 whitespace-nowrap"
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-[#0d9488] flex-shrink-0" />
+                {item}
+              </span>
+            ));
+          })()}
+        </div>
+      </motion.div>
+
       {/* Scroll Indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        className="absolute bottom-5 left-1/2 -translate-x-1/2"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}

@@ -41,7 +41,7 @@ export default function Header() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
           ? 'bg-white/95 backdrop-blur-md shadow-lg py-4'
-          : 'bg-transparent py-6'
+          : 'bg-gradient-to-b from-black/40 to-transparent py-6'
       }`}
     >
       <nav className="container-custom flex items-center justify-between">
@@ -67,10 +67,10 @@ export default function Header() {
               <motion.span
                 className={`relative text-sm font-medium transition-colors ${
                   pathname === link.href
-                    ? 'text-[#c9a227]'
+                    ? isScrolled ? 'text-[#c9a227]' : 'text-[#f97316]'
                     : isScrolled
                     ? 'text-[#334155] hover:text-[#0f172a]'
-                    : 'text-[#334155] hover:text-[#0f172a]'
+                    : 'text-white/90 hover:text-white'
                 }`}
                 whileHover={{ y: -2 }}
                 transition={{ duration: 0.2 }}
@@ -115,13 +115,13 @@ export default function Header() {
                 y: isMobileMenuOpen ? 8 : 0,
               }}
               className={`block h-0.5 w-full rounded-full transition-colors ${
-                isMobileMenuOpen || isScrolled ? 'bg-[#0f172a]' : 'bg-[#0f172a]'
+                isMobileMenuOpen || isScrolled ? 'bg-[#0f172a]' : 'bg-white'
               }`}
             />
             <motion.span
               animate={{ opacity: isMobileMenuOpen ? 0 : 1 }}
               className={`block h-0.5 w-full rounded-full transition-colors ${
-                isMobileMenuOpen || isScrolled ? 'bg-[#0f172a]' : 'bg-[#0f172a]'
+                isMobileMenuOpen || isScrolled ? 'bg-[#0f172a]' : 'bg-white'
               }`}
             />
             <motion.span
@@ -130,7 +130,7 @@ export default function Header() {
                 y: isMobileMenuOpen ? -8 : 0,
               }}
               className={`block h-0.5 w-full rounded-full transition-colors ${
-                isMobileMenuOpen || isScrolled ? 'bg-[#0f172a]' : 'bg-[#0f172a]'
+                isMobileMenuOpen || isScrolled ? 'bg-[#0f172a]' : 'bg-white'
               }`}
             />
           </div>
