@@ -238,7 +238,6 @@ const team = [
   { name: 'Mr. Salami Babatunde', role: 'General Manager', image: '/images/salami.jpeg' },
   { name: 'Mr. Mufutau Ayinde', role: 'Administration Officer', image: '/images/admission_officer.jpeg' },
   { name: 'Dr. Chen James Ngutor', role: 'Head of Medical Team', image: '/images/tutor1.jpeg' },
-  { name: 'Mr. Hameed Kazeem', role: 'Accountant/Bursar', image: '/images/bursar.jpeg' },
 ];
 
 function TeamSection() {
